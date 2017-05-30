@@ -4,38 +4,20 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-        templateUrl: 'partials/home.html',
+        templateUrl: 'partials/all.html',
+        controller: 'newController'
     })
-    .when('/dictionary', {
-        templateUrl: 'partials/dictionary.html',
-        controller: 'dictionaryController'
+    .when('/new', {
+        templateUrl: 'partials/new.html',
+        controller: 'newController'
     })
-    .when('/lvl_1', {
-    	templateUrl: 'partials/level_one.html',
-    	controller: 'levelOneController'
+    .when('/edit/:id', {
+        templateUrl: 'partials/edit.html',
+        controller: 'editController'
     })
-    .when('/lvl_2', {
-    	templateUrl: 'partials/level_two.html',
-    	controller: 'levelTwoController'
-    })
-    .when('/lvl_3', {
-    	templateUrl: 'partials/level_three.html',
-    	controller: 'levelThreeController'
-    })
-    .when('/lvl_4', {
-    	templateUrl: 'partials/level_four.html',
-    	controller: 'levelFourController'
-    })
-    .when('/game', {
-    	templateUrl: 'partials/game.html',
-    	controller: 'gameController'
-    })
-    .when('/scores', {
-    	templateUrl: 'partials/scores.html',
-    	controller: 'highscoresController'
-    })
-    .when('/feedback', {
-        templateUrl: 'partials/feedback.html'
+    .when('/show/:id', {
+        templateUrl: 'partials/show.html',
+        controller: 'editController'
     })
     .otherwise({
       redirectTo: '/'

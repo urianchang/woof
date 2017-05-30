@@ -4,7 +4,6 @@
 }
 body {
     padding-left: 10px;
-    padding-right: 10px;
 }
 form {
     margin-top: 5px;
@@ -51,81 +50,25 @@ td{
     margin: 15px 15px;
     font-style: italic;
 }
-.underline {
-    text-decoration: underline;
-}
-.italics {
-    font-style: italic;
-}
-.bold {
-    font-weight: bold;
-}
-.header {
-    text-align: center;
-}
-.body-text {
-    width: 57%;
+.left-col {
     display: inline-block;
-    vertical-align: center;
+    width: 75%;
+    vertical-align: top;
 }
-.body-image {
-    width: 38%;
+/*.left-col .searchbar {
+    margin: 10px 0px;
+}*/
+.right-col {
     display: inline-block;
     vertical-align: top;
-    margin-top: 10px;
+    width: 20%;
 }
-.body-image img {
-    border: 1px solid black;
-}
-.main h2, h3 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-.main ol {
-    margin: 10px 50px;
-}
-.main ol li {
-    margin: 10px 0px;
-}
-.footer {
-    margin-top: 20px;
-}
-.kanji {
-    text-align: center;
-    margin: 20px;
-    height: 100px;
-    width: 100px;
-    border: 3px solid black;
-    line-height: 100px;
-}
-.kanji h1 {
-    font-size: 500%;
-}
-.kanji-block {
-    text-align: center;
+/*.right-col div {
     margin: 10px;
+}*/
+/*.product-block {
     display: inline-block;
-    height: 100px;
-    width: 100px;
-    border: 3px solid black;
-    line-height: 100px;
-}
-.kanji-block p {
-    font-size: 400%;
-}
-.kanji-selection {
-    margin-top: 15px;
-}
-hr {
-    margin: 15px 0px;
-}
-form {
-    margin-left: 20px;
-    line-height: 25px;
-}
-.countdown {
-    color: red;
-}
-.score {
-    color: green;
-}
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}*/

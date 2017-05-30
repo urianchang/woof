@@ -20,8 +20,6 @@ require('./server/config/mongoose.js');
 var routes_setter = require('./server/config/routes.js');
 //: Invoke the routes function and pass it the app variable
 routes_setter(app);
-//: Prepopulate the database
-require('./server/config/database.js');
 //: Set server to listen on port 8000
 app.listen(8000, function() {
     console.log("listening on port 8000");
