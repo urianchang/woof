@@ -10,21 +10,38 @@
     <!-- <script src="assets/factories/*******FACTORY********.js" charset="utf-8"></script>
     <script src="assets/controllers/*******CONTROLLER********.js" charset="utf-8"></script>
     <script src="assets/controllers/*******CONTROLLER********.js" charset="utf-8"></script> -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css"> -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
     <!-- Font -->
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <!-- Skeleton -->
-    <link rel="stylesheet" href="assets/stylesheets/normalize.css">
-    <link rel="stylesheet" href="assets/stylesheets/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/skeleton.css">
   </head>
   <body>
-    <div class="container">
-        <div class='row'>
-            <a href="/">Home</a> | <a href="#!/new">New Friend</a>
+    <div class="header">
+        <div class="logo">
+            <h1>LOGO</h1>
         </div>
-        <div class='row' ng-view="">
-            <!-- partials should load here -->
+        
+        <div class="navLinks">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Adopt</a></li>
+                <li><a href="#">Foster</a></li>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
+    </div>
+
+    <div class='container' ng-view="">
+        <!-- partials should load here -->
+    </div>
+
+    <div class='footer'>
+        <h3>footer text</h3>
     </div>
   </body>
 </html>
