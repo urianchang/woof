@@ -409,7 +409,14 @@ there.
 @media (min-width: 550px) {}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width: 750px) {
+    .navLinks ul li:first-child {
+        display: none;
+    }
+    .navLinks ul li:not(:first-child) {
+        display: inline-block;
+    }
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}

@@ -1,7 +1,7 @@
 .header, .footer {
     width: 100%;
     position: fixed;
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 .header {
@@ -17,29 +17,89 @@
 .logo {
     width: 25%;
     display: inline-block;
-    background-color: red;
-    /*text-align: center;*/
+    /*background-color: red;*/
+    text-align: center;
     padding: 5px;
+}
+
+.logo a img {
+    max-width: 100%;
+    height: auto;
 }
 
 .navLinks {
     /*margin-top: 10px;*/
+    /*text-align: right;*/
     display: inline-block;
-    text-align: right;
-    vertical-align: middle;
+    vertical-align: top;
     width: 70%;
+    /*background-color: yellow;*/
 }
 
-.navLinks ul li {
-    display: inline;
-    margin-left: 20px;
-    background-color: yellow;
+/* Hide link to open and close navbar on small screens */
+.navLinks .icon {
+    display: inline-block;
+    margin-top: 5px;
+    /*vertical-align: middle;*/
+    /*float: right;*/
+}
+
+.navLinks img {
+    width: 50px;
+    height: 35px;
+    /*display: none;*/
+}
+
+.navLinks ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    font-size: 0;
+}
+
+.navLinks ul li:not(:first-child) {
+    display: none;
+    padding: 10px;
+    /*margin: 5px;*/
+    height: 60px;
+    width: 50px;
+    /*background-color: green;*/
+    text-align: center;
+}
+
+/*.navLinks.responsive ul li a {
+    display: block;
+    background-color: blue;
+}*/
+
+.navLinks.responsive ul li:not(:first-child) {
+    height: auto;
+    width: auto;
+    padding: 0px;
+    display: block;
+    text-align: right;
+}
+.navLinks.responsive .icon {
+    color: orange;
+}
+/*.navLinks.responsive {
+    height: 150px;
+}*/
+
+.navLinks.responsive ul li img {
+    display: none;
 }
 
 .navLinks a {
+    /*display: block;*/
+    font-size: 13px;
     text-decoration: none;
+    color: gray;
+    /*display: none;*/
 }
 
 .navLinks a:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    color: orange;
 }
