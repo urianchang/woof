@@ -1,7 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # older versions
-/v1-Angular
+/v1-Angular/bower_components/**
+/v1-Angular/node_modules/**
 
 # dependencies
 /node_modules
