@@ -3,7 +3,7 @@
   height: 60px;
 }
 
-.Navlinks {
+.Navbar ul {
   display: inline-block;
   vertical-align: top;
   list-style-type: none;
@@ -11,7 +11,7 @@
   padding: 0px;
 }
 
-.Navlinks li {
+.Navbar ul li {
   display: inline-block;
   vertical-align: top;
   line-height: 60px;
