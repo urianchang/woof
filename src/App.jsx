@@ -16,12 +16,19 @@ class App extends Component {
         <div>
           <Navbar />
           <Switch>
-            <Route exact path='/' component={ Home } />
+            <Route exact path='/' component={Home} />
+            <Route path='/:thing' component={Placeholder} />
           </Switch>
         </div>
       </Router>
     );
   }
 }
+
+const Placeholder = ({ match }) => (
+  <div>
+    <h1>Placeholder for /{match.params.thing}</h1>
+  </div>
+)
 
 export default App;
