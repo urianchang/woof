@@ -59,9 +59,9 @@
   margin: 0vw 2vw;
   color: black;
   font-size: calc(12px + 0.45vw);
-  /*text-transform: uppercase;*/
 }
 
 .nav-link:hover, .activated {
-  border-bottom: 1px solid black;
+  color: orange;
+  border-bottom: 1px solid orange;
 }
