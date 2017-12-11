@@ -1,4 +1,28 @@
 .quote-block {
   text-align: center;
   margin-top: calc(50px + 1vh);
+  padding-left: 30px;
+  padding-right: 10px;
+  line-height: 130%;
+}
+
+.quote-block p {
+  text-align: left;
+}
+
+.quote-quotation {
+  color: orange;
+  font-size: 24px;
+}
+
+.quote-text {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.quote-author {
+  color: #32CD32;
+  font-size: 18px;
+  font-style: italic;
 }
