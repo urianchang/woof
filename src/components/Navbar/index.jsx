@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import NavigationMenu from './nav_menu.jsx';
 import './nav.css';
+import logo from './logo.png';
 
 class NavigationBar extends Component {
   constructor() {
@@ -40,14 +41,19 @@ class NavigationBar extends Component {
     const isSlideOut = this.state.isSlideOut;
     const isMobile = (this.state.width <= 600) ? "mobile" : "";
     return(
-      <div className={"nav-bar " + isMobile}>
-        <FontAwesome
-          className="nav-icon"
-          name='bars'
-          size='2x'
-          onClick={this.slide}
-          />
-        <NavigationMenu links={NavbarLinks} isSlideOut={isSlideOut} />
+      <div class="header-top">
+        <a href='/'>
+          <img src={logo} alt="Woofie's Rescue logo" className="logo-icon" />
+        </a>
+        <div className={"nav-bar " + isMobile}>
+          <FontAwesome
+            className="nav-icon"
+            name='bars'
+            size='2x'
+            onClick={this.slide}
+            />
+          <NavigationMenu links={NavbarLinks} isSlideOut={isSlideOut} />
+        </div>
       </div>
     );
   }
@@ -55,34 +61,24 @@ class NavigationBar extends Component {
 
 const NavbarLinks = [
   {
-    'url': "/",
-    'exact': true,
-    'title': "Home"
-  },
-  {
     'url': "/about",
-    'exact': false,
+    'exact': true,
     'title': "About"
   },
   {
     'url': "/adopt",
-    'exact': false,
+    'exact': true,
     'title': "Adopt"
   },
   {
-    'url': "/foster",
-    'exact': false,
-    'title': "Foster"
+    'url': "/photos",
+    'exact': true,
+    'title': "Photos"
   },
   {
     'url': "/donate",
-    'exact': false,
+    'exact': true,
     'title': "Donate"
-  },
-  {
-    'url': "/contact",
-    'exact': false,
-    'title': "Contact"
   },
 ];
 
