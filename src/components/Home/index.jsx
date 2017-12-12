@@ -8,7 +8,6 @@ export default class Home extends Component {
   render() {
     return(
       <div class="container">
-        <PhotoHeader />
         <div class="row">
           <QuoteColumn />
           <div className="eight columns post">
