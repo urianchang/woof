@@ -1,0 +1,106 @@
+.footer {
+  background-color: #343436;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.footer div {
+  display: inline-block;
+}
+
+.left-foot {
+  /*background-color: red;*/
+  width: 50%;
+  vertical-align: top;
+  /*padding: 10px;*/
+  /*box-sizing: border-box;*/
+}
+
+.footer-fa-icon {
+  margin-top: 13px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  color: white;
+}
+
+.footer-fa-icon:hover {
+  color: #ffcc33;
+}
+
+.footer-pf-icon {
+  position: relative;
+  top: 2px;
+  width: 25px;
+  margin-left: 10px;
+  background-color: #9999cc;
+}
+
+.footer-pf-icon:hover {
+  background-color: #ffcc33;
+}
+
+.footer-adopt-icon {
+  color: white;
+  margin: 10px;
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 0.5s ease;
+}
+
+.footer-adopt-icon:hover {
+  -webkit-transform:scale(1.25); /* Safari and Chrome */
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+   transform:scale(1.25);
+  /* For shaking...
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  */
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.right-foot {
+  /*background-color: blue;*/
+  width: 50%;
+  text-align: right;
+  vertical-align: top;
+}
+
+.footer-adopt-button {
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid #ff6666;
+  color: #ff6666;
+  padding: 0px 20px;
+}
+
+.button-icon {
+  vertical-align: -10%;
+}
+
+.footer-adopt-button:hover {
+  color: #343436;
+  background-color: #ff6666;
+  border: 1px solid #ff6666;
+}

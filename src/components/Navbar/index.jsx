@@ -41,10 +41,8 @@ class NavigationBar extends Component {
     const isSlideOut = this.state.isSlideOut;
     const isMobile = (this.state.width <= 600) ? "mobile" : "";
     return(
-      <div class="header-top">
-        <a href='/'>
-          <img src={logo} alt="Woofie's Rescue logo" className="logo-icon" />
-        </a>
+      <div className="header-top">
+        <img src={logo} alt="Woofie's Rescue logo" className="logo-icon" />
         <div className={"nav-bar " + isMobile}>
           <FontAwesome
             className="nav-icon"
@@ -59,7 +57,12 @@ class NavigationBar extends Component {
   }
 }
 
-const NavbarLinks = [  
+const NavbarLinks = [
+  {
+    'url': '/',
+    'exact': true,
+    'title': "Main"
+  },
   {
     'url': "/adopt",
     'exact': true,
