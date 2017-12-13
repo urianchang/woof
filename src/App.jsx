@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
 
 //: Import Page/Template components
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/NavBar';
-import MainBody from './components/MainBody';
+import BodyRoutes from './components/MainBody';
 import Footer from './components/Footer';
 
 export default class App extends Component {
@@ -14,7 +14,7 @@ export default class App extends Component {
         <ScrollToTop>
           <div>
             <Navbar />
-            <MainBody />
+            <BodyRoutes />
             <Footer />
           </div>
         </ScrollToTop>
