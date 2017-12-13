@@ -59,26 +59,21 @@ class NavigationBar extends Component {
   }
 }
 
-const NavbarLinks = [
-  {
-    'url': "/about",
-    'exact': true,
-    'title': "About"
-  },
+const NavbarLinks = [  
   {
     'url': "/adopt",
     'exact': true,
     'title': "Adopt"
   },
   {
-    'url': "/photos",
-    'exact': true,
-    'title': "Photos"
-  },
-  {
     'url': "/donate",
     'exact': true,
     'title': "Donate"
+  },
+  {
+    'url': "/about",
+    'exact': true,
+    'title': "About"
   },
 ];
 
