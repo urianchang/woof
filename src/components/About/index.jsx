@@ -36,7 +36,7 @@ export default class About extends Component {
         <div className="row">
           <h1>Contact</h1>
           <p>
-            <FontAwesome name="envelope" size="1x" className="contact-fa-icon" />
+            <FontAwesome name="envelope" size="lg" className="contact-fa-icon" />
             <a href="mailto:woofiesrescue@gmail.com">
               woofiesrescue@gmail.com
             </a>

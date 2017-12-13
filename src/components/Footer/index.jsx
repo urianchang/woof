@@ -34,11 +34,13 @@ export default class Footer extends Component {
           </a>
         </div>
         <div className="right-foot">
-          <button className="footer-adopt-button">
-            <p>
-              <FontAwesome className="button-icon" name="paw" size='2x' /> Adopt
-            </p>
-          </button>
+          <a href="#/adopt">
+            <button className="footer-adopt-button">
+              <p>
+                <FontAwesome className="button-icon" name="paw" size='2x' /> Adopt
+              </p>
+            </button>
+          </a>
         </div>
       </div>
     );

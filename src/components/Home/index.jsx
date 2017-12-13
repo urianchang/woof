@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PhotoHeader from '../PhotoHeader';
 import QuoteColumn from '../QuoteColumn';
 import leash from './leash.png';
 import './home.css';
@@ -7,8 +6,8 @@ import './home.css';
 export default class Home extends Component {
   render() {
     return(
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           <QuoteColumn />
           <div className="eight columns post">
             <div className="post-title">
