@@ -8,7 +8,7 @@ class NavigationBar extends Component {
   constructor() {
     super();
     this.state = {
-      isSlideOut: false,
+      isSlideOut: true,
       width: window.innerWidth,
       height: window.innerHeight,
     };
