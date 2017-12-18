@@ -1,8 +1,8 @@
 .quote-block {
-  text-align: center;
-  margin-top: calc(50px + 1vh);
-  padding-left: 30px;
-  padding-right: 10px;
+  /* text-align: center; */
+  margin-top: calc(35px + 1vh);
+  /* padding-left: 30px;
+  padding-right: 10px; */
   line-height: 150%;
 }
 

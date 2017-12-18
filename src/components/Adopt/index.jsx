@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 import DOGS from './dogs.js';
 import './adopt.css';
 
@@ -32,7 +33,7 @@ export default class Adopt extends Component {
     return(
       <div className="container">
         <div className="row adopt-title">
-          <h1>Looking for a forever home</h1>
+          <h1>Looking for a forever home <FontAwesome name="home" size="lg" className="adopt-title-icon" /></h1>
         </div>
         <div className="row adopt-body">
           {DOGS.map(this.makeDogProfiles)}
