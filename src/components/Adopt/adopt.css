@@ -1,6 +1,11 @@
 .adopt-title {
   text-align: center;
 }
+
+.adopt-body {
+  text-align: center;
+}
+
 .dog-profile {
   border: 1px solid black;
   border-radius: 10px;

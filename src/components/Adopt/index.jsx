@@ -34,7 +34,7 @@ export default class Adopt extends Component {
         <div className="row adopt-title">
           <h1>Looking for a forever home</h1>
         </div>
-        <div className="row">
+        <div className="row adopt-body">
           {DOGS.map(this.makeDogProfiles)}
         </div>
       </div>
