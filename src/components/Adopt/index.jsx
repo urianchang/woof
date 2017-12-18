@@ -11,8 +11,8 @@ export default class Adopt extends Component {
   makeDogProfiles(params, i) {
     return(
       <div key={i} className="dog-profile">
-        <img src={params['profile']}
-          alt={params['name']  + 'photo'} />
+        <img src={params['profile_pic']}
+          alt={params['name']  + ' photo'} />
         <h3>
           <a href={"#/adopt/"+params['name']}>
             {params['name']}
@@ -21,7 +21,7 @@ export default class Adopt extends Component {
         <ul>
           <li><span>Gender:</span> {params['gender']}</li>
           <li><span>Age:</span> {params['age']}</li>
-          <li><span>Breed:</span> {params['breed']}</li>
+          <li><span>Breed:</span> {params['breed']['primary']}</li>
           <li><span>Size:</span> {params['size']}</li>
         </ul>
       </div>

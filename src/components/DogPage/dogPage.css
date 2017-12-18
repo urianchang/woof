@@ -1,0 +1,40 @@
+.dog-page-header {
+  border-bottom: 1px solid black;
+}
+
+.dog-page-header h3 {
+  margin-bottom: 0px;
+}
+
+.dog-page-content {
+  margin-top: 10px;
+}
+
+.photo-column {
+  text-align: center;
+}
+
+.photo-column p {
+  font-style: italic;
+}
+
+.dog-page-content span {
+  font-weight: bold;
+}
+
+.dog-page-content p {
+  margin: 0px;
+}
+
+.dog-page-profile {
+  width: 100%;
+}
+
+.dog-description {
+  margin-top: 20px;
+}
+
+.adoption-info-container {
+  margin-top: 30px;
+  font-weight: bold;
+}
