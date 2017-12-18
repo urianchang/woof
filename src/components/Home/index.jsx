@@ -9,7 +9,7 @@ export default class Home extends Component {
     return(
       <div className="container">
         <div className="row home-header">
-          <img src={cover} alt="Woofie's Rescue cover photo" />
+          <img src={cover} alt="Woofie's Rescue cover" />
         </div>
         <div className="row">
           <QuoteColumn />
