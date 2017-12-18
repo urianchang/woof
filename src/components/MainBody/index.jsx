@@ -9,6 +9,7 @@ import Home from '../Home';
 import About from '../About';
 import Adopt from '../Adopt';
 import DogPage from '../DogPage';
+import Donate from '../Donate';
 
 export default class BodyRoutes extends Component {
   render() {
@@ -18,6 +19,7 @@ export default class BodyRoutes extends Component {
         <Route exact path='/about' component={About} />
         <Route exact path='/adopt' component={Adopt} />
         <Route path='/adopt/:name' component={DogPage} />
+        <Route path='/donate' component={Donate} />
         <Route path='/:route' component={NoMatch} />
       </Switch>
     );
