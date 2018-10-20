@@ -60,7 +60,7 @@ class AdoptionInfo extends Component {
           The adoption fee is $200, which includes the cost of vaccinations,
           spay/neuter, medical treatments (if any), and transport from the shelter.
           If you are interested in adopting, please download
-          our <a href="">Adoption Questionnaire</a> and e-mail it to us
+          our <a href="/">Adoption Questionnaire</a> and e-mail it to us
           at <a href="mailto:woofiesrescue@gmail.com">woofiesrescue@gmail.com</a>. Thank you!
         </p>
       </div>
