@@ -23,7 +23,8 @@ export default class Donate extends Component {
           </p>
           <h3>Amazon Wish List</h3>
           <p>
-            Our Amazon wish list is constantly updated with supplies needed by the rescues.
+              Our <a href="https://www.amazon.com/registry/wishlist/171MFHP4F0L1Q/ref=cm_sw_r_cp_ep_ws_io6xBbPE9J363">Amazon wish list</a> is
+              constantly updated with supplies needed by the rescued dogs.
           </p>
         </div>
         <div className="row">
