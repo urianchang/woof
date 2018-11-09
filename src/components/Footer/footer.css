@@ -1,5 +1,7 @@
 .footer {
-  background-color: #343436;
+  /*background-color: #343436;*/
+  background-color: #66b3ff;
+  /*background-color: #ADD8E6;*/
   position: fixed;
   /* min-width: 390px; */
   bottom: 0;
