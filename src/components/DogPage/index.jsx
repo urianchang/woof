@@ -14,10 +14,6 @@ export default class DogPage extends Component {
       }
     }
     if (foundDog) {
-      let dogBreed = foundDog.breed.primary;
-      if (foundDog.breed.additional.length > 0) {
-        dogBreed += " / " + foundDog.breed.additional.join(' / ');
-      }
       return(
         <div className="container">
           <div className="row dog-page-header">
@@ -32,7 +28,7 @@ export default class DogPage extends Component {
               <p>More photos here: <a href={foundDog.photo_album}>Imgur</a></p>
             </div>
             <div className="one-half column">
-              <p><span>Breed: </span>{dogBreed}</p>
+              <p><span>Breed: </span>{foundDog.breed}</p>
               <p><span>Gender: </span>{foundDog.gender + (foundDog.spayed ? ' (spayed)' : ' (not spayed)') }</p>
               <p><span>Age: </span>{foundDog.age}</p>
               <p><span>Weight: </span>{foundDog.weight}</p>

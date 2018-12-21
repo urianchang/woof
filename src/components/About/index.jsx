@@ -37,7 +37,7 @@ class AboutSheet extends Component {
                             <img src={dexter_pic} alt="Dexter profile" className="about-pic" />
                         </Grid>
                         <Grid item xs={12} sm={7} md={8}>
-                            <Typography variant="h4" gutterBottom={true}>
+                            <Typography variant="h4" gutterBottom={true} color={"primary"}>
                                 About Us
                             </Typography>
                             <Typography component="p" gutterBottom={true}>
@@ -49,7 +49,7 @@ class AboutSheet extends Component {
                                 the adopter and dog.
                             </Typography>
                             <Divider className={classes.divider} />
-                            <Typography variant="h4" gutterBottom={true}>
+                            <Typography variant="h4" gutterBottom={true} color={"primary"}>
                                 Connect with Us
                             </Typography>
                             <Typography component="p" gutterBottom={true}>

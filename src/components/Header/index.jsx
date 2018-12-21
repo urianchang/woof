@@ -77,8 +77,8 @@ class NavigationBar extends React.Component {
             <div className={classes.list}>
                 <List>
                     {sidebarLinks.map((link, index) => (
-                        <Link exact to={link.url} className={classes.navlink}>
-                            <ListItem button key={index}>
+                        <Link exact to={link.url} className={classes.navlink} key={index}>
+                            <ListItem button>
                                 <ListItemIcon>
                                     <FontAwesomeIcon icon={link.icon} size='lg'/>
                                 </ListItemIcon>
