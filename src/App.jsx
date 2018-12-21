@@ -9,7 +9,8 @@ import lime from '@material-ui/core/colors/lime';
 //: FontAwesome icons
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-    faAt, faDog, faEnvelope, faGift, faHandHoldingHeart, faHome, faPaw,  faUsers,
+    faAt, faBone, faDog, faEnvelope, faGift, faHandHoldingHeart, faHome,
+    faPaw,  faUsers,
 } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
@@ -20,7 +21,8 @@ import BodyRoutes from './components/MainBody';
 
 //: Create library of FontAwesome icons for easier reference throughout the app
 library.add(
-    faAt, faDog, faEnvelope, faGift, faHandHoldingHeart, faHome, faPaw,  faUsers,
+    faAt, faBone, faDog, faEnvelope, faGift, faHandHoldingHeart,
+    faHome, faPaw,  faUsers,
     fab
 );
 

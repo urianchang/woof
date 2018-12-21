@@ -1,65 +1,106 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import './dogPage.css';
 
+//: Material UI components
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+import './dogPage.css';
 import DOGS from '../Adopt/dogs.js';
 
-export default class DogPage extends Component {
-  render() {
-    const reqDogName = this.props.match.params.name;
-    let foundDog = null;
-    for (let i=0; i < DOGS.length; i++) {
-      if (DOGS[i]['name'].toLowerCase() === reqDogName.toLowerCase()) {
-        foundDog = DOGS[i];
-      }
+const styles = theme => ({
+    root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+        margin: 20,
+    },
+    gridContainer: {
+        marginTop: 10,
+    },
+    divider: {
+        marginTop: 10,
+        marginBottom: 10
+    },
+});
+
+class DogPage extends Component {
+    render(){
+        const {classes} = this.props;
+        const adoptionInfo = (
+            <Grid item>
+                <Typography variant={"h6"}>Adopting</Typography>
+                <Typography variant={"body1"}>
+                    Our adoption fee is $350, which includes the cost of vaccinations,
+                    spaying/neutering, any medical treatments, and transport from the
+                    shelter. If you are interested in adopting, please e-mail us
+                    at <a href="mailto:woofiesrescue@gmail.com">woofiesrescue@gmail.com</a>.
+                    Thank you!
+                </Typography>
+            </Grid>
+        );
+        const reqDogName = this.props.match.params.name;
+        let foundDog = null;
+        for (let i=0; i < DOGS.length; i++) {
+            if (DOGS[i]['name'].toLowerCase() === reqDogName.toLowerCase()) {
+                foundDog = DOGS[i];
+            }
+        }
+        if (foundDog) {
+            return(
+                <div>
+                    <Paper className={classes.root} elevation={1}>
+                        <Grid container spacing={24}>
+                            <Grid item xs={12} sm={5} md={4}>
+                                <img
+                                    src={foundDog.profile_pic}
+                                    alt={foundDog.name}
+                                    className={"dog-profile-pic"}
+                                />
+                                <Typography variant="caption" align={"center"}>
+                                    Photo album for {foundDog.name}: <a href={foundDog.photo_album}>Imgur</a>
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12} sm={7} md={8}>
+                                <Typography variant="h4" color={"primary"}>
+                                    {foundDog.name}
+                                </Typography>
+                                <Typography variant={"caption"}>
+                                    {foundDog.age_class + " · " + foundDog.gender}
+                                </Typography>
+                                <Typography variant={"caption"} gutterBottom={true}>
+                                    {foundDog.breed}
+                                </Typography>
+                                <Typography variant="h6">About</Typography>
+                                <Typography variant="body1">
+                                    Age: {foundDog.age} <br />
+                                    Size: {foundDog.size} <br />
+                                    Weight: {foundDog.weight} <br />
+                                    Spayed/Neutered: {foundDog.spayed} <br />
+                                    Vaccinations: {foundDog.vaccinations} <br />
+                                    Special Needs: {foundDog.special_needs} <br />
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Typography variant="h6">Meet {foundDog.name}</Typography>
+                                <Typography variant={"body1"}>
+                                    {foundDog.description}
+                                </Typography>
+                            </Grid>
+                            {adoptionInfo}
+                        </Grid>
+                    </Paper>
+                </div>
+            );
+        } else { return( <Redirect to="/adopt" /> ); }
     }
-    if (foundDog) {
-      return(
-        <div className="container">
-          <div className="row dog-page-header">
-            <h3>{foundDog.name}</h3>
-          </div>
-          <div className="row dog-page-content">
-            <div className="one-half column photo-column">
-              <img
-                src={foundDog.profile_pic}
-                alt={foundDog.name + ' photo'}
-                className="dog-page-profile" />
-              <p>More photos here: <a href={foundDog.photo_album}>Imgur</a></p>
-            </div>
-            <div className="one-half column">
-              <p><span>Breed: </span>{foundDog.breed}</p>
-              <p><span>Gender: </span>{foundDog.gender + (foundDog.spayed ? ' (spayed)' : ' (not spayed)') }</p>
-              <p><span>Age: </span>{foundDog.age}</p>
-              <p><span>Weight: </span>{foundDog.weight}</p>
-              <div className="dog-description">
-                <p>{foundDog.description}</p>
-              </div>
-              <AdoptionInfo />
-            </div>
-          </div>
-        </div>
-      );
-    } else {
-      return(
-        <Redirect to="/adopt" />
-      );
-    }
-  }
 }
 
-class AdoptionInfo extends Component {
-  render() {
-    return(
-      <div className="adoption-info-container">
-        <p>
-          The adoption fee is $200, which includes the cost of vaccinations,
-          spay/neuter, medical treatments (if any), and transport from the shelter.
-          If you are interested in adopting, please download
-          our <a href="/">Adoption Questionnaire</a> and e-mail it to us
-          at <a href="mailto:woofiesrescue@gmail.com">woofiesrescue@gmail.com</a>. Thank you!
-        </p>
-      </div>
-    );
-  }
-}
+DogPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(DogPage);

@@ -31,7 +31,7 @@ class DonateSheet extends Component {
                 </Grid>
                 <Grid item xs={12} sm={7} md={8}>
                     <Typography variant="h4" gutterBottom={true} color={"primary"}>
-                        Give a Dog a Bone
+                        Give a Dog a <FontAwesomeIcon className="contact-fa-icon" icon={"bone"} size="1x" />
                     </Typography>
                     <Typography variant="body1" gutterBottom={true}>
                         There are many ways to support Woofie's Rescue. We greatly appreciate your generosity!
