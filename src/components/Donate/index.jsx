@@ -33,7 +33,7 @@ class DonateSheet extends Component {
                     <Typography variant="h4" gutterBottom={true} color={"primary"}>
                         Give a Dog a Bone
                     </Typography>
-                    <Typography variant="p" gutterBottom={true}>
+                    <Typography variant="body1" gutterBottom={true}>
                         There are many ways to support Woofie's Rescue. We greatly appreciate your generosity!
                     </Typography>
                 </Grid>
@@ -45,7 +45,7 @@ class DonateSheet extends Component {
                   <FontAwesomeIcon className="contact-fa-icon" icon={['fab', 'amazon']} size="1x" />
                   AmazonSmile
               </Typography>
-              <Typography variant="p">
+              <Typography variant="body1">
                   Please sign up for <a href="https://smile.amazon.com/ch/81-2281994">AmazonSmile</a> and
                   select "Woofies Rescue" as your charity to support. Amazon will donate 0.5% of the total
                   price of purchases to your selected charity.
@@ -58,7 +58,7 @@ class DonateSheet extends Component {
                   <FontAwesomeIcon className="contact-fa-icon" icon={"gift"} size="1x" />
                   Amazon Wish List
               </Typography>
-              <Typography variant="p">
+              <Typography variant="body1">
                   Our <a href="https://www.amazon.com/registry/wishlist/171MFHP4F0L1Q/ref=cm_sw_r_cp_ep_ws_io6xBbPE9J363">
                   Amazon Wish List</a> is constantly updated with supplies needed by the rescued dogs.
               </Typography>
@@ -70,7 +70,7 @@ class DonateSheet extends Component {
                     <FontAwesomeIcon className="contact-fa-icon" icon={['fab', 'paypal']} size="1x" />
                     PayPal
                 </Typography>
-                <Typography variant="p">
+                <Typography variant="body1">
                     A donation of any amount makes a big difference.
                 </Typography>
             </Grid>
