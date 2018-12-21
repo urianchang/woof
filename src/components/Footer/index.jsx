@@ -1,3 +1,5 @@
+/* DEPRECATED
+
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import pf_icon from './pf_icon.png';
@@ -53,3 +55,4 @@ export default class Footer extends Component {
     );
   }
 }
+*/

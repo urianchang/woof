@@ -1,24 +1,49 @@
 import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 
-//: Import Page/Template components
+//: Material-UI components
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import lightBlue from '@material-ui/core/colors/lightBlue';
+import lime from '@material-ui/core/colors/lime';
+
+//: FontAwesome icons
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+    faAt, faDog, faEnvelope, faHandHoldingHeart, faHome, faPaw,  faUsers,
+} from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+//: Custom components
 import ScrollToTop from './components/ScrollToTop';
-import Header from './components/Header';
+import NavigationBar from './components/Header';
 import BodyRoutes from './components/MainBody';
-import Footer from './components/Footer';
+
+//: Create library of FontAwesome icons for easier reference throughout the app
+library.add(
+    faAt, faDog, faEnvelope, faHandHoldingHeart, faHome, faPaw,  faUsers,
+    fab
+);
+
+const theme = createMuiTheme({
+    palette: {
+        primary: lightBlue,
+        secondary: lime,
+    },
+});
 
 export default class App extends Component {
     render() {
         return (
-            <Router>
-                <ScrollToTop>
-                    <div>
-                        <Header />
-                        <BodyRoutes />
-                        <Footer />
-                    </div>
-                </ScrollToTop>
-            </Router>
+            <MuiThemeProvider theme={theme}>
+                <Router>
+                    <ScrollToTop>
+                        <div>
+                            <NavigationBar />
+                            <BodyRoutes />
+                        </div>
+                    </ScrollToTop>
+                </Router>
+            </MuiThemeProvider>
         );
     }
 };

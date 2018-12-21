@@ -1,0 +1,9 @@
+/* Custom CSS to fix spacing between FA icons and text in the drawer */
+
+.iconTextusers {
+    margin-left: -5px;
+}
+
+.iconTexthand-holding-heart {
+    margin-left: -3px;
+}

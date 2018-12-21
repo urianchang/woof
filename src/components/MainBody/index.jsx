@@ -6,7 +6,7 @@ import {
 import './NoMatch.css';
 
 import Home from '../Home';
-import About from '../About';
+import AboutSheet from '../About';
 import Adopt from '../Adopt';
 import DogPage from '../DogPage';
 import Donate from '../Donate';
@@ -16,7 +16,7 @@ export default class BodyRoutes extends Component {
     return(
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
+        <Route exact path='/about' component={AboutSheet} />
         <Route exact path='/adopt' component={Adopt} />
         <Route path='/adopt/:name' component={DogPage} />
         <Route path='/donate' component={Donate} />
