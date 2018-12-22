@@ -1,72 +1,134 @@
-import React from "react";
-import { NavLink } from 'react-router-dom';
-import FontAwesome from 'react-fontawesome';
-import Sidebar from "react-sidebar";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import './style.css';
-import logo from './logo.png';
+//: Material-UI components
+import { withStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
-const SidebarLinks = [
-    { 'url': '/', 'title': "Main" },
-    { 'url': "/adopt", 'title': "Adopt" },
-    { 'url': "/donate", 'title': "Donate" },
-    { 'url': "/about", 'title': "About" },
+import './header.css';
+
+const styles = {
+    root: {
+        flexGrow: 1,
+    },
+    grow: {
+        flexGrow: 1,
+        fontFamily: "Charm",
+    },
+    menuButton: {
+        marginLeft: -12,
+        marginRight: 20,
+    },
+    list: {
+        width: 200,
+    },
+    navlink: {
+        textDecoration: "none",
+        color: "#03A9F4",  //: Changes the color when link is pressed
+    }
+};
+const sidebarLinks = [
+    {
+        'url': '/',
+        'name': "Main",
+        'icon': "paw"
+    },
+    {
+        'url': "/adopt",
+        'name': "Adopt",
+        'icon': "dog"
+    },
+    {
+        'url': "/donate",
+        'name': "Donate",
+        'icon': "hand-holding-heart"
+    },
+    {
+        'url': "/about",
+        'name': "About Us",
+        'icon': "users"
+    },
 ];
 
-export default class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sidebarOpen: false
-        };
-        this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
-    }
+class NavigationBar extends React.Component {
+    state = {
+      left: false
+    };
 
-    onSetSidebarOpen(open) {
-        this.setState({ sidebarOpen: open});
-    }
-
-    makeLinks(params, i) {
-        return (
-            <div
-                key={i}
-                className={"nav-link-container"}
-            >
-                <NavLink
-                    className="nav-link"
-                    activeClassName="activated"
-                    exact to={params['url']}>
-                    {params['title']}
-                </NavLink>
-            </div>
-        );
-    }
+    toggleDrawer = (side, open) => () => {
+        this.setState({
+            [side]: open,
+        });
+    };
 
     render() {
-        return(
-            <div className="header-top">
-                <Sidebar
-                    sidebar={
-                        <div>
-                            <div className={"sidebar-title-container"}>
-                                Menu
-                            </div>
-                            { SidebarLinks.map(this.makeLinks) }
-                        </div>
-                    }
-                    open={this.state.sidebarOpen}
-                    onSetOpen={this.onSetSidebarOpen}
-                    styles={{sidebar: { background: "white", textAlign: "left" }}}
+        const { classes } = this.props;
+        const sideList = (
+            <div className={classes.list}>
+                <List>
+                    {sidebarLinks.map((link, index) => (
+                        <Link to={link.url} className={classes.navlink} key={index}>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <FontAwesomeIcon icon={link.icon} size='lg'/>
+                                </ListItemIcon>
+                                <ListItemText primary={link.name} className={"iconText" + link.icon} />
+                            </ListItem>
+                        </Link>
+                    ))}
+                </List>
+            </div>
+        );
+
+        return (
+            <div className={classes.root}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="Menu"
+                            onClick={this.toggleDrawer('left', true)}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                        <Typography variant="h4" color='inherit' className={classes.grow}>
+                            Woofie's Rescue
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <SwipeableDrawer
+                    open={this.state.left}
+                    onClose={this.toggleDrawer('left', false)}
+                    onOpen={this.toggleDrawer('left', true)}
                 >
-                    <FontAwesome
-                        className="nav-icon"
-                        name='bars'
-                        size='2x'
-                        onClick={() => this.onSetSidebarOpen(true)}
-                    />
-                </Sidebar>
-                <img src={logo} alt="Woofie's Rescue logo" className="logo-icon" />
+                    <div
+                        tabIndex={0}
+                        role="button"
+                        onClick={this.toggleDrawer('left', false)}
+                        onKeyDown={this.toggleDrawer('left', false)}
+                    >
+                        {sideList}
+                    </div>
+                </SwipeableDrawer>
             </div>
         );
     }
 }
+
+NavigationBar.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(NavigationBar);

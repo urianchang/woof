@@ -1,10 +1,22 @@
+.about-pic {
+  max-width: 98%;
+  max-height: 98%;
+  border: 5px solid black;
+}
+
+.contact-fa-icon-mail {
+  margin-right: 8px;
+  color: #03A9F4;
+}
+
 .contact-fa-icon {
   margin-right: 10px;
+  color: #03A9F4;
 }
 
 .contact-pf-icon {
   position: relative;
   top: 2px;
-  width: 25px;
-  margin-right: 8px;
+  width: 15px;
+  margin-right: 11px;
 }
