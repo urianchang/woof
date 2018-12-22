@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import './NoMatch.css';
 
-import Home from '../Home';
+import HomeSheet from '../Home';
 import AboutSheet from '../About';
 import AdoptSheet from '../Adopt';
 import DogPage from '../DogPage';
@@ -15,7 +15,7 @@ export default class BodyRoutes extends Component {
   render() {
     return(
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={HomeSheet} />
         <Route exact path='/about' component={AboutSheet} />
         <Route exact path='/adopt' component={AdoptSheet} />
         <Route path='/adopt/:name' component={DogPage} />

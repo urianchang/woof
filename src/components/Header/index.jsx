@@ -24,6 +24,7 @@ const styles = {
     },
     grow: {
         flexGrow: 1,
+        fontFamily: "Charm",
     },
     menuButton: {
         marginLeft: -12,
@@ -102,7 +103,7 @@ class NavigationBar extends React.Component {
                         >
                             <MenuIcon/>
                         </IconButton>
-                        <Typography variant="h5" color="inherit" className={classes.grow}>
+                        <Typography variant="h4" color='inherit' className={classes.grow}>
                             Woofie's Rescue
                         </Typography>
                     </Toolbar>
