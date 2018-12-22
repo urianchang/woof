@@ -51,6 +51,7 @@ class AdoptSheet extends Component {
                           spacing={16}
                           alignItems={'center'}
                           className={classes.gridContainer}
+                          justify={'center'}
                     >
                         {DOGS.map((dog, index) => (
                             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
