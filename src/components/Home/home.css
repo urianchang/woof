@@ -15,7 +15,7 @@
     color: #ff6666;
     padding: 0px 15px;
     border-radius: 8px;
-    /*background-color: #343436;*/
+    background-color: #ffffff;
 }
 
 .adopt-button:hover {
@@ -29,6 +29,7 @@
     color: #9bf09d;
     padding: 0px 15px;
     border-radius: 8px;
+    background-color: #ffffff;
 }
 
 .donate-button:hover {
