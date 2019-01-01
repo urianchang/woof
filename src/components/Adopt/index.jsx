@@ -11,17 +11,35 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import DOGS from './dogs.js';
+import adopt_hero_img from "./adorable-animal-breed-731022.jpg";
 
 const styles = theme => ({
     root: {
         ...theme.mixins.gutters(),
         paddingTop: theme.spacing.unit * 2,
         paddingBottom: theme.spacing.unit * 2,
-        margin: 20,
+        margin: 5,
+    },
+    heroImage: {
+        height: 350,
+        backgroundImage: `url(${adopt_hero_img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+    },
+    heroText: {
+        color: "white",
+        bottom: 20,
+        left: 20,
+        position: "absolute",
+        fontSize: 17,
+        width: 275,
+        lineHeight: 1,
+        textShadow: "1px 1px 1px black",
     },
     gridContainer: {
         marginTop: 10,
@@ -34,7 +52,7 @@ const styles = theme => ({
     },
     navlink: {
         textDecoration: "none",
-    }
+    },
 });
 
 class AdoptSheet extends Component {
@@ -64,10 +82,19 @@ class AdoptSheet extends Component {
             );
         }
         return(
-            <div>
-                <Paper className={classes.root} elevation={1}>
-                    <Typography variant="h5" color={'primary'} align={'center'}>
-                        Looking for a Forever <FontAwesomeIcon icon={"home"} size={"1x"}/>
+            <div className="main-body">
+                <Paper className={classes.heroImage} elevation={0}>
+                    <Typography
+                        variant={"overline"}
+                        className={classes.heroText}
+                        align={'left'}
+                    >
+                        Your New Best Friend
+                    </Typography>
+                </Paper>
+                <Paper className={classes.root} elevation={0}>
+                    <Typography variant="h4" color={'default'} align={'center'}>
+                        <FontAwesomeIcon icon={"dog"} size='lg' className="contact-fa-icon" /> Available Dogs
                     </Typography>
                     <Grid container
                           spacing={16}
@@ -79,17 +106,19 @@ class AdoptSheet extends Component {
                             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                                 <Card className={classes.card}>
                                     <CardActionArea onClick={(ev) => this.handleClick(ev, dog.name)}>
-                                        <CardHeader
-                                            title={dog.name}
-                                            subheader={dog.age_class + " · " + dog.gender}
-                                        />
                                         <CardMedia
                                             className={classes.media}
                                             image={dog.profile_pic}
                                             title={dog.name}
                                         />
                                         <CardContent>
-                                            <Typography component="p" align={"center"}>
+                                            <Typography variant="h5" color={"primary"}>
+                                                {dog.name}
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                {dog.age_class + " · " + dog.gender}
+                                            </Typography>
+                                            <Typography variant="body2">
                                                 {dog.breed}
                                             </Typography>
                                         </CardContent>

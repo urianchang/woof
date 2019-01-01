@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 
-import dexter_pic from './dexter.jpg';
+// import dexter_pic from './dexter.jpg';
+import about_hero_img from './adorable-animal-blur-406014.jpg';
 import pf_icon from './pf_icon.png';
 import './about.css';
 
@@ -19,6 +20,24 @@ const styles = theme => ({
         paddingTop: theme.spacing.unit * 2,
         paddingBottom: theme.spacing.unit * 2,
         margin: 20,
+    },
+    heroImage: {
+        height: 350,
+        backgroundImage: `url(${about_hero_img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+    },
+    heroText: {
+        color: "white",
+        bottom: 20,
+        left: 20,
+        position: "absolute",
+        fontSize: 17,
+        width: 275,
+        lineHeight: 1,
+        textShadow: "1px 1px 1px black",
     },
     divider: {
         marginTop: 20,
@@ -30,15 +49,21 @@ class AboutSheet extends Component {
     render() {
         const {classes} = this.props;
         return (
-            <div>
-                <Paper className={classes.root} elevation={1}>
+            <div className="main-body">
+                <Paper className={classes.heroImage} elevation={0}>
+                    <Typography
+                        variant={"overline"}
+                        className={classes.heroText}
+                        align={'left'}
+                    >
+                        Let's Play!
+                    </Typography>
+                </Paper>
+                <Paper className={classes.root} elevation={0}>
                     <Grid container spacing={24}>
-                        <Grid item xs={12} sm={5} md={4}>
-                            <img src={dexter_pic} alt="Dexter profile" className="about-pic" />
-                        </Grid>
-                        <Grid item xs={12} sm={7} md={8}>
-                            <Typography variant="h4" gutterBottom={true} color={"primary"}>
-                                About Us
+                        <Grid item xs={12}>
+                            <Typography variant="h4" gutterBottom={true} color={"default"} align={'center'}>
+                                <FontAwesomeIcon icon={"users"} size='lg' className="contact-fa-icon" /> About Us
                             </Typography>
                             <Typography component="p" gutterBottom={true}>
                                 Woofie's Rescue in San Jose, CA is a non-profit 501(c)3, volunteer-driven
@@ -49,8 +74,9 @@ class AboutSheet extends Component {
                                 the adopter and dog.
                             </Typography>
                             <Divider className={classes.divider} />
-                            <Typography variant="h4" gutterBottom={true} color={"primary"}>
-                                Connect with Us
+                            <Typography variant="h5" gutterBottom={true} color={"default"}>
+                                <FontAwesomeIcon icon={"paw"} size='lg' className="contact-fa-icon" /> Connect
+                                with Us
                             </Typography>
                             <Typography component="p" gutterBottom={true}>
                                 <FontAwesomeIcon icon="at" size="lg" className="contact-fa-icon-mail" />

@@ -3,8 +3,6 @@ import { HashRouter as Router } from 'react-router-dom';
 
 //: Material-UI components
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import lightBlue from '@material-ui/core/colors/lightBlue';
-import lime from '@material-ui/core/colors/lime';
 
 //: FontAwesome icons
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -28,8 +26,18 @@ library.add(
 
 const theme = createMuiTheme({
     palette: {
-        primary: lightBlue,
-        secondary: lime,
+        primary: {
+            light: "#c2f877",
+            main: "#8FC547",
+            dark: "#5d9410",
+            contrastText: "#000000",
+        },
+        secondary: {
+            light: "#ffbe5d",
+            main: "#F48D2C",
+            dark: "#bc5f00",
+            contrastText: "#000000",
+        },
     },
     typography: {
         useNextVariants: true,

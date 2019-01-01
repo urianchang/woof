@@ -1,5 +1,9 @@
 /* Custom CSS to fix spacing between FA icons and text in the drawer */
 
+.iconTexthome {
+    margin-left: -3px;
+}
+
 .iconTextusers {
     margin-left: -5px;
 }

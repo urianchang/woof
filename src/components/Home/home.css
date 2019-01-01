@@ -11,8 +11,8 @@
 }
 
 .adopt-button {
-    border: 2px solid #ff6666;
-    color: #ff6666;
+    border: 2px solid #F48D2C;
+    color: #F48D2C;
     padding: 0px 15px;
     border-radius: 8px;
     background-color: #ffffff;
@@ -20,13 +20,13 @@
 
 .adopt-button:hover {
   color: #343436;
-  background-color: #ff6666;
+  background-color: #F48D2C;
 }
 
 .donate-button {
     margin-right: 25px;
-    border: 2px solid #9bf09d;
-    color: #9bf09d;
+    border: 2px solid #8FC547;
+    color: #8FC547;
     padding: 0px 15px;
     border-radius: 8px;
     background-color: #ffffff;
@@ -34,5 +34,5 @@
 
 .donate-button:hover {
   color: #343436;
-  background-color: #9bf09d;
+  background-color: #8FC547;
 }
