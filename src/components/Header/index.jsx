@@ -24,7 +24,13 @@ const styles = {
     },
     grow: {
         flexGrow: 1,
-        fontFamily: "Charm",
+    },
+    titleText: {
+        fontFamily: "Amaranth",
+        marginBottom: -8
+    },
+    titleLabel: {
+        width: 120,
     },
     menuButton: {
         marginLeft: -12,
@@ -35,14 +41,17 @@ const styles = {
     },
     navlink: {
         textDecoration: "none",
-        color: "#03A9F4",  //: Changes the color when link is pressed
+        color: "#8FC547",  //: Changes the color when link is pressed
+    },
+    navicon: {
+        color: "#F48D2C",
     }
 };
 const sidebarLinks = [
     {
         'url': '/',
-        'name': "Main",
-        'icon': "paw"
+        'name': "Home",
+        'icon': "home"
     },
     {
         'url': "/adopt",
@@ -56,14 +65,14 @@ const sidebarLinks = [
     },
     {
         'url': "/about",
-        'name': "About Us",
+        'name': "About",
         'icon': "users"
     },
 ];
 
 class NavigationBar extends React.Component {
     state = {
-      left: false
+      right: false
     };
 
     toggleDrawer = (side, open) => () => {
@@ -81,7 +90,7 @@ class NavigationBar extends React.Component {
                         <Link to={link.url} className={classes.navlink} key={index}>
                             <ListItem button>
                                 <ListItemIcon>
-                                    <FontAwesomeIcon icon={link.icon} size='lg'/>
+                                    <FontAwesomeIcon icon={link.icon} size='lg' className={classes.navicon} />
                                 </ListItemIcon>
                                 <ListItemText primary={link.name} className={"iconText" + link.icon} />
                             </ListItem>
@@ -93,31 +102,39 @@ class NavigationBar extends React.Component {
 
         return (
             <div className={classes.root}>
-                <AppBar position="static">
+                <AppBar position="fixed" color="inherit">
                     <Toolbar>
+                        <div className={classes.grow}>
+                            <div className={classes.titleLabel}>
+                                <Typography variant="h4" color='primary' className={classes.titleText}>
+                                    woofie's
+                                </Typography>
+                                <Typography variant="body1" color='secondary' align={"right"} >
+                                    rescue
+                                </Typography>
+                            </div>
+                        </div>
                         <IconButton
                             className={classes.menuButton}
                             color="inherit"
                             aria-label="Menu"
-                            onClick={this.toggleDrawer('left', true)}
+                            onClick={this.toggleDrawer('right', true)}
                         >
                             <MenuIcon/>
                         </IconButton>
-                        <Typography variant="h4" color='inherit' className={classes.grow}>
-                            Woofie's Rescue
-                        </Typography>
                     </Toolbar>
                 </AppBar>
                 <SwipeableDrawer
-                    open={this.state.left}
-                    onClose={this.toggleDrawer('left', false)}
-                    onOpen={this.toggleDrawer('left', true)}
+                    open={this.state.right}
+                    onClose={this.toggleDrawer('right', false)}
+                    onOpen={this.toggleDrawer('right', true)}
+                    anchor="right"
                 >
                     <div
                         tabIndex={0}
                         role="button"
-                        onClick={this.toggleDrawer('left', false)}
-                        onKeyDown={this.toggleDrawer('left', false)}
+                        onClick={this.toggleDrawer('right', false)}
+                        onKeyDown={this.toggleDrawer('right', false)}
                     >
                         {sideList}
                     </div>

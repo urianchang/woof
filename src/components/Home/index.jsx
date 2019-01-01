@@ -9,8 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 
-import simba_pic from './simba_snow.jpg';
-import hercules_pic from './hercules_playing.jpg';
+import home_hero_img from './animal-dog-pet-33273.jpg';
 import './home.css';
 
 const styles = theme => ({
@@ -18,7 +17,32 @@ const styles = theme => ({
         ...theme.mixins.gutters(),
         paddingTop: theme.spacing.unit * 2,
         paddingBottom: theme.spacing.unit * 2,
-        margin: 20,
+        margin: 5,
+    },
+    heroImage: {
+        height: 350,
+        backgroundImage: `url(${home_hero_img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        position: "relative",
+    },
+    heroText: {
+        color: "white",
+        bottom: 20,
+        left: 20,
+        position: "absolute",
+        fontSize: 17,
+        width: 275,
+        lineHeight: 1,
+        textShadow: "1px 1px 1px black",
+    },
+    quoteBody: {
+        color: "#C0C0C0",
+    },
+    quoteStart: {
+        color: "#F48D2C",
+        fontSize: 20,
     },
     divider: {
         marginTop: 10,
@@ -33,21 +57,32 @@ class HomeSheet extends Component {
   render() {
       const {classes} = this.props;
       return(
-          <div>
-              <Paper className={classes.root} elevation={1}>
-                  <Grid container
-                        spacing={24}
-                        justify={'center'}
+          <div className="main-body">
+              <Paper className={classes.heroImage} elevation={0}>
+                  <Typography
+                      variant={"overline"}
+                      className={classes.heroText}
+                      align={'left'}
                   >
-                      <Grid item xs={12} sm={6} md={4}>
-                          <img src={hercules_pic} alt={"Hercules chewing on a toy"} className={"home-main-pic"} />
+                      Because Every Great Dog Deserves a Great Home
+                  </Typography>
+              </Paper>
+              <Paper className={classes.root} elevation={0}>
+                  <Grid container spacing={24} justify={'center'} alignItems={'center'}>
+                      <Grid item xs={12} sm={3}>
+                          <Typography variant={"body1"} className={classes.quoteBody}>
+                              <span className={classes.quoteStart}>"</span>Dogs are not our whole life,
+                              but they make our lives whole."
+                          </Typography>
+                          <Typography variant={"body2"} className={classes.quoteBody}>
+                            - Roger Caras
+                          </Typography>
                       </Grid>
-                      <Grid item xs={12} sm={6} md={4}>
+                      <Grid item xs={12} sm={9}>
                           <Typography
                               variant={"h4"}
                               color={'primary'}
                               gutterBottom={true}
-                              align={'center'}
                           >
                               Woof woof!
                           </Typography>
@@ -60,10 +95,7 @@ class HomeSheet extends Component {
                               the adopter and dog.
                           </Typography>
                       </Grid>
-                      <Grid item xs={12} sm={6} md={4}>
-                          <img src={simba_pic} alt={"Simba in the snow"} className={"home-main-pic"} />
-                      </Grid>
-                      <Grid item xs={12} sm={6} md={12}>
+                      <Grid item xs={12}>
                           <Divider className={classes.divider} />
                           <Typography variant={"body1"} align={'center'}>
                               Thank you for checking us out and we hope that we can work together in

@@ -51,8 +51,8 @@ class DogPage extends Component {
         }
         if (foundDog) {
             return(
-                <div>
-                    <Paper className={classes.root} elevation={1}>
+                <div className="main-body">
+                    <Paper className={classes.root} elevation={0}>
                         <Grid container spacing={24}>
                             <Grid item xs={12} sm={5} md={4}>
                                 <img
