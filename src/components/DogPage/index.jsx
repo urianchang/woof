@@ -36,8 +36,11 @@ class DogPage extends Component {
                 <Typography variant={"body1"}>
                     Our adoption fee is $350, which includes the cost of vaccinations,
                     spaying/neutering, any medical treatments, and transport from the
-                    shelter. If you are interested in adopting, please e-mail us
-                    at <a href="mailto:woofiesrescue@gmail.com">woofiesrescue@gmail.com</a>.
+                    shelter. If you are interested in adopting, please fill out the <a
+                    href="https://goo.gl/forms/Sbdu1L3ZQQxK1E3I3"
+                    target="_blank"
+                    rel="noopener noreferrer">application form</a> or e-mail us at <a
+                    href="mailto:woofiesrescue@gmail.com">woofiesrescue@gmail.com</a>.
                     Thank you!
                 </Typography>
             </Grid>
@@ -61,7 +64,10 @@ class DogPage extends Component {
                                     className={"dog-profile-pic"}
                                 />
                                 <Typography variant="caption" align={"center"}>
-                                    Photo album for {foundDog.name}: <a href={foundDog.photo_album}>Imgur</a>
+                                    Photo album for {foundDog.name}: <a
+                                    href={foundDog.photo_album}
+                                    target="_blank"
+                                    rel="noopener noreferrer">Imgur</a>
                                 </Typography>
                             </Grid>
                             <Grid item xs={12} sm={7} md={8}>
